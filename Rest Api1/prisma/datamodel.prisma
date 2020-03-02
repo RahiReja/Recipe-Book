@@ -1,0 +1,19 @@
+type User {
+  id: ID! @id
+  name: String!
+}
+
+type Recipes{
+  id: ID! @id
+  name: String!
+  description: String!
+  imgUrl: String!
+  ingredients: [Ingredient!]!
+}
+
+type Ingredient{
+  id: ID! @id
+  name: String!
+  amount: Int!
+  recipes: [Recipes!]! @relation(link: TABLE)
+}
